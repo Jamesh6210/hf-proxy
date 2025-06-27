@@ -13,6 +13,8 @@ RUN \
     libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://github.com/Jamesh6210/hf-proxy .
+
 RUN pip install flask curl-cffi m3u8 gunicorn
 
 COPY --link proxy.so sitecustomize.py ./
